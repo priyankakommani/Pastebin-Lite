@@ -3,7 +3,7 @@ import { Hono } from 'hono'
 import { z } from 'zod'
 import { prisma } from './db'
 
-const app = new Hono()
+export const app = new Hono()
 
 // Helper to get present time (supports x-test-now-ms)
 const getNow = (c: any) => {
@@ -158,9 +158,11 @@ app.get('/p/:id', async (c) => {
     return c.html(html)
 })
 
-serve({
-    fetch: app.fetch,
-    port: 3000
-}, (info) => {
-    console.log(`Server is running on http://localhost:${info.port}`)
-})
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+    serve({
+        fetch: app.fetch,
+        port: 3000
+    }, (info) => {
+        console.log(`Server is running on http://localhost:${info.port}`)
+    })
+}
