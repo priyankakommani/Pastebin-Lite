@@ -1,0 +1,42 @@
+# Common Node.js exclusions
+node_modules/
+dist/
+dist-ssr/
+build/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment and Secrets
+.env
+.env.local
+.env.*.local
+
+# OS/IDE Files
+.DS_Store
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Project-Specific Exclusions (Agent metadata, etc)
+.agent/
+brain/
+.gemini/
+
+# Database / Prisma
+# Note: Usually we ignore dev databases but keep the schema and migrations
+prisma/*.db
+prisma/*.db-journal
+
+# Frontend specific (if any remain)
+frontend/node_modules/
+frontend/dist/
+
+# Backend specific
+backend/node_modules/
+backend/dist/

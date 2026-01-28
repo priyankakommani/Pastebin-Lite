@@ -1,0 +1,17 @@
+{
+  "name": "pastebin-lite",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "start": "npm run start --workspace=backend",
+    "postinstall": "prisma generate"
+  },
+  "devDependencies": {
+    "prisma": "^5.x.x"
+  }
+}

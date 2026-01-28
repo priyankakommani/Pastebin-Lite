@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Paste {
+  id             String    @id @default(cuid())
+  content        String
+  maxViews       Int?
+  remainingViews Int?
+  expiresAt      DateTime?
+  createdAt      DateTime  @default(now())
+}
