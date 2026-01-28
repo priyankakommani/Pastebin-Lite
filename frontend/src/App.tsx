@@ -70,7 +70,7 @@ function App() {
 
         <div className="controls">
           <div className="input-group">
-            <label><Clock size={16} inline /> TTL (Seconds)</label>
+            <label><Clock size={16} /> TTL (Seconds)</label>
             <input
               type="number"
               placeholder="Infinity"
@@ -80,7 +80,7 @@ function App() {
           </div>
 
           <div className="input-group">
-            <label><Eye size={16} inline /> Max Views</label>
+            <label><Eye size={16} /> Max Views</label>
             <input
               type="number"
               placeholder="Unlimited"
